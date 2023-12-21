@@ -1,0 +1,42 @@
+//file:noinspection GroovyAssignabilityCheck
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+    }
+}
+
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+        maven {
+            name = 'Paper'
+            url = 'https://repo.papermc.io/repository/maven-public/'
+        }
+        maven {
+            name = "starmcRepoPublic"
+            url = "https://repo.star-mc.ru/public"
+        }
+    }
+}
+
+rootProject.name = 'commander'
+[
+        'commander-commons',
+        'commander-velocity',
+        'commander-bukkit',
+        'test-plugin'
+].forEach {
+    include it
+}
+
+rootProject.children.each { project ->
+    {
+        project.buildFileName = "${project.name}.gradle"
+        project.children.each { subproject ->
+            {
+                subproject.buildFileName = "${subproject.name}.gradle"
+            }
+        }
+    }
+}
+

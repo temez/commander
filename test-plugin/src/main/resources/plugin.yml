@@ -1,0 +1,7 @@
+name: test-plugin
+main: dev.temez.commander.test.application.CommanderTestPlugin
+version: '${version}'
+api-version: 1.16
+
+authors:
+  - temez (temezf@gmail.com)

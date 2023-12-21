@@ -1,0 +1,30 @@
+spring:
+  profiles:
+    active: dev
+
+logging:
+  level:
+    dev.temez.commander: DEBUG
+
+
+test-plugin:
+  localization:
+    messages:
+      commander-help-header-template: " <gray>- <white>Command usage for <yellow>%s"
+      commander-help-usage: " /%s %s- %s"
+      commander-help-subcommands-section: " <gray>- <white>Subcommands:"
+
+      "commander-available-only-from-console": "This command is available only from console"
+      "commander-available-only-from-game": "This command is available only from game!"
+      "commander-invalid-gamemode": "Invalid gamemode!"
+      "commander-not-a-integer": "Argument must be integer!"
+      "commander-not-a-float": "Argument must be float"
+      "commander-world-does-not-exists": "This world doesn't exists!"
+      "commander-no-such-a-player-online": "No such player online!"
+      "commander-user-did-not-played-on-this-server": "This player didn't played on this server!"
+
+      test-command-description: "This is a simple test command"
+      test-subcommand-description: "This is a simple test subcommand"
+
+      error-prefix: "<red>ERROR:<white> "
+      bad-luck: "Better luck next time..."
