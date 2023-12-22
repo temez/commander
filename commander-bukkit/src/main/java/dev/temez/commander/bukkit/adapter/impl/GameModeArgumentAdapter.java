@@ -33,7 +33,7 @@ public final class GameModeArgumentAdapter implements ArgumentAdapter<GameMode> 
       int gamemodeCode = Integer.parseInt(rawArgument);
       GameMode gameMode = GameMode.getByValue(gamemodeCode);
       if (gameMode == null) {
-        throw new ConformableException("commander-invalid-gamemode");
+        throw new ConformableException("commander.arguments.invalid-gamemode");
       }
       return gameMode;
     }
@@ -41,7 +41,7 @@ public final class GameModeArgumentAdapter implements ArgumentAdapter<GameMode> 
     try {
       return GameMode.valueOf(rawArgument.toUpperCase());
     } catch (Exception e) {
-      throw new ConformableException("commander-invalid-gamemode");
+      throw new ConformableException("commander.arguments.invalid-gamemode");
     }
   }
 }

@@ -24,10 +24,10 @@ public final class CommandSourceFilter implements SimpleCommandFilter {
       @NotNull Sender<?> sender
   ) throws ValidationException {
     if (sender.isConsoleSender() && command.getType() == Command.CommandType.INGAME) {
-      throw new ValidationException("commander-available-only-from-game");
+      throw new ValidationException("commander.filter.command-source.available-only-from-game");
     }
     if (!sender.isConsoleSender() && command.getType() == Command.CommandType.CONSOLE) {
-      throw new ValidationException("commander-available-only-from-console");
+      throw new ValidationException("commander.filter.command-source.available-only-from-console");
     }
   }
 }

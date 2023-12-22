@@ -27,7 +27,7 @@ public final class IntgerArgumentAdapter implements ArgumentAdapter<Integer> {
     try {
       return Integer.parseInt(rawArgument);
     } catch (Exception e) {
-      throw new ConformableException("commander-not-a-integer");
+      throw new ConformableException("commander.arguments.argument-must-be-integer");
     }
   }
 }

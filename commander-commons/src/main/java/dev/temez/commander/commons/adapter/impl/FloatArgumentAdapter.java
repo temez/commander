@@ -27,7 +27,7 @@ public final class FloatArgumentAdapter implements ArgumentAdapter<Float> {
     try {
       return Float.parseFloat(rawArgument);
     } catch (Exception e) {
-      throw new ConformableException("commander-not-a-float");
+      throw new ConformableException("commander.arguments.argument-must-be-float");
     }
   }
 }

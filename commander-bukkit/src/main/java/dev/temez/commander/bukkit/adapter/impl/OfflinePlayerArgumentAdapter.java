@@ -36,7 +36,7 @@ public final class OfflinePlayerArgumentAdapter implements ArgumentAdapter<Offli
   ) throws ConformableException {
     OfflinePlayer player = Bukkit.getOfflinePlayer(rawArgument);
     if (!player.hasPlayedBefore()) {
-      throw new ConformableException("commander-user-did-not-played-on-this-server");
+      throw new ConformableException("commander.arguments.player-have-not-player-on-this-server");
     }
     return player;
   }

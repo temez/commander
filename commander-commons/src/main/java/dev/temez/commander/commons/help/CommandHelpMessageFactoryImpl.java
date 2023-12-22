@@ -32,7 +32,7 @@ public final class CommandHelpMessageFactoryImpl implements CommandHelpMessageFa
     result.add(
         localizationService.localizeString(
             sender,
-            "commander-help-header-template",
+            "commander.help.header-template",
             command.getName()
         )
     );
@@ -48,7 +48,7 @@ public final class CommandHelpMessageFactoryImpl implements CommandHelpMessageFa
     }
 
     result.add(
-        localizationService.localizeString(sender, "commander-help-subcommands-section")
+        localizationService.localizeString(sender, "commander.help.subcommands-section")
     );
     accessibleSubcommands
         .forEach(subcommand -> result.add(getCommandUsage(sender, subcommand))
@@ -81,7 +81,7 @@ public final class CommandHelpMessageFactoryImpl implements CommandHelpMessageFa
     }
     return localizationService.localizeString(
         sender,
-        "commander-help-usage",
+        "commander.help.usage-template",
         command.getFullName(),
         argumentsHelpString,
         localizationService.localizeString(sender, command.getDescription())

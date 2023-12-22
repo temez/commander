@@ -34,7 +34,7 @@ public final class PlayerArgumentAdapter implements ArgumentAdapter<Player> {
   ) throws ConformableException {
     Player player = Bukkit.getPlayer(rawArgument);
     if (player == null) {
-      throw new ConformableException("commander-no-such-a-player-online");
+      throw new ConformableException("commander.arguments.player-is-offline");
     }
     return player;
   }
