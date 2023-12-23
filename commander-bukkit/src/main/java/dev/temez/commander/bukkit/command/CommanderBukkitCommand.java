@@ -47,6 +47,7 @@ public class CommanderBukkitCommand extends Command implements PlatformCommand {
       @NotNull CommanderExceptionHandler exceptionHandler
   ) {
     super(command.getName());
+    setAliases(command.getAlias());
     this.command = command;
     this.commandFilterService = commandFilterService;
     this.commandCompleter = commandCompleter;
