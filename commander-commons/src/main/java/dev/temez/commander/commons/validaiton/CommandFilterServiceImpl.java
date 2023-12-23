@@ -52,7 +52,7 @@ public final class CommandFilterServiceImpl implements CommandFilterService {
       @NotNull T filterAnnotation,
       @NotNull Sender<?> sender
   ) throws ValidationException {
-    Class<T> filterAnnotationClass = (Class<T>) filterAnnotation.getClass();
+    Class<T> filterAnnotationClass = (Class<T>) filterAnnotation.annotationType();
     CommandFilter<T> filter = filterRegistry.get(filterAnnotationClass);
     filter.filter(sender, filterAnnotation);
   }

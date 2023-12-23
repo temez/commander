@@ -15,14 +15,13 @@ test-plugin:
           header-template: " <gray>- <white>Command usage for <yellow>%s"
           usage-template: " /%s %s- %s"
           subcommands-section: " <gray>- <white>Subcommands:"
-        argument:
-          float:
-            argument-must-be-float: "Argument must be float"
-            argument-must-be-integer: "Argument must be integer"
-            invalid-gamemode: "Invalid gamemode!"
-            player-have-not-player-on-this-server: "This player didn't played on this server!"
-            player-is-offline: "This player is offline"
-            world-does-not-exists: "This world doesn't exists!"
+        arguments:
+          argument-must-be-float: "Argument must be float"
+          argument-must-be-integer: "Argument must be integer"
+          invalid-gamemode: "Invalid gamemode!"
+          player-have-not-player-on-this-server: "This player didn't played on this server!"
+          player-is-offline: "This player is offline"
+          world-does-not-exists: "This world doesn't exists!"
 
         filter:
           command-source:

@@ -1,5 +1,5 @@
 dependencies {
-    implementation 'dev.temez.springlify:springlify-bukkit:0.5.9.4dev'
+    implementation 'dev.temez.springlify:springlify-bukkit:0.5.9.5dev'
     compileOnly 'com.destroystokyo.paper:paper-api:1.16.5-R0.1-SNAPSHOT'
     implementation 'net.kyori:adventure-text-minimessage:4.14.0'
     implementation project(":commander-bukkit")

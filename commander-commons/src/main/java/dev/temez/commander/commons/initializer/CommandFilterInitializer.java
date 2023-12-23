@@ -1,8 +1,7 @@
 package dev.temez.commander.commons.initializer;
 
-import dev.temez.commander.commons.annotation.context.Global;
-import dev.temez.commander.commons.validaiton.registry.global.GlobalFilterRegistry;
-import dev.temez.commander.commons.validaiton.simple.SimpleCommandFilter;
+import dev.temez.commander.commons.validaiton.CommandFilter;
+import dev.temez.commander.commons.validaiton.registry.CommandFilterRegistry;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.log4j.Log4j2;
@@ -16,19 +15,18 @@ import org.springframework.stereotype.Component;
 @FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
 public final class CommandFilterInitializer implements BeanPostProcessor {
 
-  @NotNull GlobalFilterRegistry globalFilterRegistry;
+  @NotNull CommandFilterRegistry commandFilterRegistry;
 
   @Lazy
-  public CommandFilterInitializer(@NotNull GlobalFilterRegistry globalFilterRegistry) {
-    this.globalFilterRegistry = globalFilterRegistry;
+  public CommandFilterInitializer(@NotNull CommandFilterRegistry commandFilterRegistry) {
+    this.commandFilterRegistry = commandFilterRegistry;
   }
 
   @Override
   public @NotNull Object postProcessAfterInitialization(@NotNull Object bean,
                                                         @NotNull String beanName) {
-    if (bean instanceof SimpleCommandFilter commandFilter
-        && bean.getClass().isAnnotationPresent(Global.class)) {
-      globalFilterRegistry.register(commandFilter);
+    if (bean instanceof CommandFilter<?> commandFilter) {
+      commandFilterRegistry.register(commandFilter);
     }
     return bean;
   }

@@ -3,6 +3,7 @@ package dev.temez.commander.test.command;
 import dev.temez.commander.commons.annotation.Command;
 import dev.temez.commander.commons.annotation.CommandRoot;
 import dev.temez.commander.commons.annotation.SubCommand;
+import dev.temez.commander.test.command.validation.annotation.RandomCommandAccess;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -21,6 +22,7 @@ import org.jetbrains.annotations.NotNull;
 public final class TestCommand {
 
   @CommandRoot
+  @RandomCommandAccess(-1)
   public void execute(
       @NotNull CommandSender commandSender,
       @NotNull Integer integer,
